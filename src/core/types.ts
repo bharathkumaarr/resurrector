@@ -37,6 +37,7 @@ export interface Incident {
     affectedServices: string[]
     rootCause?: string
     attemptedActions: RecoveryAttempt[]
+    timeline?: TimelineEvent[]
     resolvedAt?: Date
     report?: IncidentReport
 }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resurrector — Autonomous Self-Healing Platform</title>
+    <meta name="description" content="Real-time autonomous self-healing and disaster recovery platform powered by AI agents and MCP orchestration.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div>
+                <div class="logo">⟐ RESURRECTOR</div>
+                <div class="logo-sub">Autonomous Self-Healing Platform</div>
+            </div>
+            <div class="status-badge healthy" id="system-badge">
+                <div class="status-dot"></div>
+                <span class="status-label">All Systems Operational</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="ws-indicator">
+                <div class="ws-dot"></div>
+                <span class="ws-label">Connecting...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="main">
+
+        <!-- Agent Pipeline (full width) -->
+        <section class="card pipeline-card">
+            <div class="card-header">
+                <span class="card-title">🤖 Agent Recovery Pipeline</span>
+                <span class="card-badge">7 Agents</span>
+            </div>
+            <div class="pipeline" id="agent-pipeline">
+                <!-- Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- System Health (left) -->
+        <section class="card">
+            <div class="card-header">
+                <span class="card-title">🏥 System Health</span>
+                <span class="card-badge">Live</span>
+            </div>
+            <div class="health-grid">
+                <div class="health-item healthy" id="health-app">
+                    <div class="health-icon">🖥️</div>
+                    <div class="health-name">Demo App</div>
+                    <div class="health-status up">HEALTHY</div>
+                </div>
+                <div class="health-item healthy" id="health-db">
+                    <div class="health-icon">🗄️</div>
+                    <div class="health-name">Database</div>
+                    <div class="health-status up">HEALTHY</div>
+                </div>
+                <div class="health-item healthy" id="health-prom">
+                    <div class="health-icon">📊</div>
+                    <div class="health-name">Prometheus</div>
+                    <div class="health-status up">HEALTHY</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics (right) -->
+        <section class="card">
+            <div class="card-header">
+                <span class="card-title">📈 Live Metrics</span>
+                <span class="card-badge">Real-time</span>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-item" id="metric-response">
+                    <div class="metric-label">Response Time</div>
+                    <div class="metric-value good">—</div>
+                    <span class="metric-unit">ms</span>
+                </div>
+                <div class="metric-item" id="metric-errors">
+                    <div class="metric-label">Error Rate</div>
+                    <div class="metric-value good">0.0</div>
+                    <span class="metric-unit">%</span>
+                </div>
+                <div class="metric-item" id="metric-memory">
+                    <div class="metric-label">Memory Usage</div>
+                    <div class="metric-value good">—</div>
+                    <span class="metric-unit">MB</span>
+                </div>
+                <div class="metric-item" id="metric-status">
+                    <div class="metric-label">HTTP Status</div>
+                    <div class="metric-value good">—</div>
+                    <span class="metric-unit"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chaos Controls (left) -->
+        <section class="card">
+            <div class="card-header">
+                <span class="card-title">💥 Chaos Injection</span>
+                <span class="card-badge">Demo Controls</span>
+            </div>
+            <div class="chaos-grid">
+                <button class="chaos-btn" data-chaos="unhealthy">
+                    <span class="chaos-icon">🔴</span>
+                    Service Down
+                </button>
+                <button class="chaos-btn" data-chaos="latency">
+                    <span class="chaos-icon">🐌</span>
+                    High Latency
+                </button>
+                <button class="chaos-btn" data-chaos="memory">
+                    <span class="chaos-icon">📈</span>
+                    Memory Leak
+                </button>
+                <button class="chaos-btn" data-chaos="crash">
+                    <span class="chaos-icon">💀</span>
+                    Crash App
+                </button>
+                <button class="chaos-btn reset" data-chaos="reset">
+                    <span class="chaos-icon">🔄</span>
+                    Reset All
+                </button>
+                <button class="chaos-btn reset" data-chaos="healthy">
+                    <span class="chaos-icon">💚</span>
+                    Force Healthy
+                </button>
+            </div>
+        </section>
+
+        <!-- Incident Report (right) -->
+        <section class="card report-card" id="report-panel">
+            <div class="card-header">
+                <span class="card-title">📋 Latest Incident Report</span>
+                <span class="card-badge">RCA</span>
+            </div>
+            <div class="report-content" id="report-content">
+                No incidents resolved yet.
+            </div>
+        </section>
+
+        <!-- Event Timeline (full width) -->
+        <section class="card timeline-card">
+            <div class="card-header">
+                <span class="card-title">📡 Live Event Stream</span>
+                <span class="card-badge" id="event-count">0 events</span>
+            </div>
+            <div class="timeline-scroll" id="timeline">
+                <div class="timeline-empty">Waiting for events... System is being monitored.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
