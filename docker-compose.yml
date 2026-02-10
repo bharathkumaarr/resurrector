@@ -1,0 +1,89 @@
+services:
+  archestra:
+    image: archestra/platform:latest
+    ports:
+      - "9000:9000"
+      - "3000:3000"
+    environment:
+      - ARCHESTRA_QUICKSTART=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - archestra-postgres-data:/var/lib/postgresql/data
+      - archestra-app-data:/app/data
+    networks:
+      - resurrector-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - resurrector-network
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - resurrector-network
+    depends_on:
+      - prometheus
+
+  demo-app:
+    build: ./demo/app
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@demo-db:5432/demo
+    networks:
+      - resurrector-network
+    depends_on:
+      - demo-db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  demo-db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=demo
+    volumes:
+      - demo-db-data:/var/lib/postgresql/data
+    networks:
+      - resurrector-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  resurrector-network:
+    driver: bridge
+
+volumes:
+  archestra-postgres-data:
+  archestra-app-data:
+  prometheus-data:
+  grafana-data:
+  demo-db-data:
