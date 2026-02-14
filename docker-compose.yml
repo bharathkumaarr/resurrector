@@ -6,14 +6,16 @@ services:
       - "3000:3000"
     environment:
       - ARCHESTRA_QUICKSTART=true
+      - ARCHESTRA_API_BASE_URL=http://localhost:9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - archestra-postgres-data:/var/lib/postgresql/data
       - archestra-app-data:/app/data
+      - ./mcp-servers:/mcp-servers
     networks:
       - resurrector-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:3000/health" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -56,7 +58,7 @@ services:
     depends_on:
       - demo-db
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/health" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -72,7 +74,7 @@ services:
     networks:
       - resurrector-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 10s
       timeout: 5s
       retries: 3

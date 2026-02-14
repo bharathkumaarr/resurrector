@@ -1,0 +1,28 @@
+{
+    "spec": {
+        "template": {
+            "spec": {
+                "volumes": [
+                    {
+                        "name": "mcp-files",
+                        "hostPath": {
+                            "path": "/mcp-servers",
+                            "type": "Directory"
+                        }
+                    }
+                ],
+                "containers": [
+                    {
+                        "name": "mcp-server",
+                        "volumeMounts": [
+                            {
+                                "name": "mcp-files",
+                                "mountPath": "/mcp-servers"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

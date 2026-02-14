@@ -1,0 +1,12 @@
+﻿PID   USER     TIME  COMMAND
+    1 root      0:00 {docker-entrypoi} /bin/sh /docker-entrypoint.sh
+ 1105 root      0:01 {supervisord} /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisord.conf
+ 1106 postgres  0:00 postgres -D /var/lib/postgresql/data
+ 1107 root      1:35 {MainThread} node dist/server.mjs
+ 1108 root      0:29 next-server (v
+ 1113 postgres  0:02 postgres: checkpointer 
+ 1114 postgres  0:00 postgres: background writer 
+ 1116 postgres  0:00 postgres: walwriter 
+ 1117 postgres  0:00 postgres: autovacuum launcher 
+ 1118 postgres  0:00 postgres: logical replication launcher 
+ 1500 root      0:00 ps aux

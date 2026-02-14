@@ -1,0 +1,71 @@
+﻿Name:             mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d-589cb8pqqxm
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             archestra-mcp-control-plane/172.19.0.2
+Start Time:       Fri, 13 Feb 2026 17:02:00 +0000
+Labels:           app=mcp-server
+                  mcp-server-id=2b3993f2-eee7-49a5-949b-980e158b72f4
+                  mcp-server-name=config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d
+                  pod-template-hash=589cb86cc6
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.11
+IPs:
+  IP:           10.244.0.11
+Controlled By:  ReplicaSet/mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d-589cb86cc6
+Containers:
+  mcp-server:
+    Container ID:  containerd://5cc77dd12cfd2c61903dbec4d7eea49828226e8da2dfe156fdd2867a5f1d5c50
+    Image:         europe-west1-docker.pkg.dev/friendly-path-465518-r6/archestra-public/mcp-server-base:1.0.43
+    Image ID:      europe-west1-docker.pkg.dev/friendly-path-465518-r6/archestra-public/mcp-server-base@sha256:98a746927fa25f732052096174e032e0660ee247d16c9dc22e91dec92fc3026f
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      node
+    Args:
+      /mcp-servers/config/dist/index.js
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Sat, 14 Feb 2026 11:45:40 +0000
+      Finished:     Sat, 14 Feb 2026 11:45:40 +0000
+    Ready:          False
+    Restart Count:  28
+    Requests:
+      cpu:        50m
+      memory:     128Mi
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-fjbv2 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-fjbv2:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason          Age                 From     Message
+  ----     ------          ----                ----     -------
+  Warning  BackOff         17h (x75 over 18h)  kubelet  spec.containers{mcp-server}: Back-off restarting failed container mcp-server in pod mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d-589cb8pqqxm_default(d8a12989-b982-49e3-8b2a-b20d9bdc261b)
+  Normal   Pulled          17h (x22 over 18h)  kubelet  spec.containers{mcp-server}: Container image "europe-west1-docker.pkg.dev/friendly-path-465518-r6/archestra-public/mcp-server-base:1.0.43" already present on machine and can be accessed by the pod
+  Normal   SandboxChanged  15m                 kubelet  Pod sandbox changed, it will be killed and re-created.
+  Normal   Pulled          4m4s (x7 over 15m)  kubelet  spec.containers{mcp-server}: Container image "europe-west1-docker.pkg.dev/friendly-path-465518-r6/archestra-public/mcp-server-base:1.0.43" already present on machine and can be accessed by the pod
+  Normal   Created         4m3s (x7 over 15m)  kubelet  spec.containers{mcp-server}: Container created
+  Normal   Started         4m3s (x7 over 14m)  kubelet  spec.containers{mcp-server}: Container started
+  Warning  BackOff         1s (x18 over 14m)   kubelet  spec.containers{mcp-server}: Back-off restarting failed container mcp-server in pod mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d-589cb8pqqxm_default(d8a12989-b982-49e3-8b2a-b20d9bdc261b)
+

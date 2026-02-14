@@ -1,0 +1,50 @@
+﻿[16:43:39 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-bw","url":"/api/teams","method":"GET"}[39m
+[16:43:39 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-bx","url":"/api/agents/all","method":"GET"}[39m
+[16:43:39 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-bs","url":"/api/roles","method":"GET","statusCode":200,"responseTime":393.21169999986887}[39m
+[16:43:39 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-bv","url":"/api/organization","method":"GET","statusCode":200,"responseTime":83.01403599977493}[39m
+[16:43:39 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-bw","url":"/api/teams","method":"GET","statusCode":200,"responseTime":99.51233700104058}[39m
+[16:43:39 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-bx","url":"/api/agents/all","method":"GET","statusCode":200,"responseTime":130.39723800122738}[39m
+[16:43:40 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-by","url":"/metrics","method":"GET"}[39m
+[16:43:40 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:43:40 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-by","url":"/metrics","method":"GET","statusCode":401,"responseTime":1.6228800006210804}[39m
+[16:43:55 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-bz","url":"/metrics","method":"GET"}[39m
+[16:43:55 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:43:55 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-bz","url":"/metrics","method":"GET","statusCode":401,"responseTime":2.2232990004122257}[39m
+[16:44:10 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c0","url":"/metrics","method":"GET"}[39m
+[16:44:10 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:44:10 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c0","url":"/metrics","method":"GET","statusCode":401,"responseTime":3.238172998651862}[39m
+[16:44:25 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c1","url":"/metrics","method":"GET"}[39m
+[16:44:25 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:44:25 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c1","url":"/metrics","method":"GET","statusCode":401,"responseTime":2.7990639992058277}[39m
+[16:44:40 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c2","url":"/metrics","method":"GET"}[39m
+[16:44:40 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:44:40 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c2","url":"/metrics","method":"GET","statusCode":401,"responseTime":2.7821129988878965}[39m
+[16:44:55 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c3","url":"/metrics","method":"GET"}[39m
+[16:44:55 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:44:55 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c3","url":"/metrics","method":"GET","statusCode":401,"responseTime":1.8627149984240532}[39m
+[16:45:10 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c4","url":"/metrics","method":"GET"}[39m
+[16:45:10 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:45:10 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c4","url":"/metrics","method":"GET","statusCode":401,"responseTime":3.345761999487877}[39m
+[16:45:25 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c5","url":"/metrics","method":"GET"}[39m
+[16:45:25 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:45:25 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c5","url":"/metrics","method":"GET","statusCode":401,"responseTime":19.77858900092542}[39m
+[16:45:40 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c6","url":"/metrics","method":"GET"}[39m
+[16:45:40 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:45:40 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c6","url":"/metrics","method":"GET","statusCode":401,"responseTime":2.812238000333309}[39m
+[16:45:55 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c7","url":"/metrics","method":"GET"}[39m
+[16:45:55 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:45:55 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c7","url":"/metrics","method":"GET","statusCode":401,"responseTime":3.492068000137806}[39m
+[16:46:10 UTC] [32mINFO[39m: [36mincoming request[39m [90m{"reqId":"req-c8","url":"/metrics","method":"GET"}[39m
+[16:46:10 UTC] [32mINFO[39m: [36mHTTP 40x request error occurred[39m [90m{"statusCode":401}[39m
+    error: "Unauthenticated"
+[16:46:10 UTC] [32mINFO[39m: [36mrequest completed[39m [90m{"reqId":"req-c8","url":"/metrics","method":"GET","statusCode":401,"responseTime":2.106684999540448}[39m

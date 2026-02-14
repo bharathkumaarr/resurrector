@@ -1,0 +1,58 @@
+﻿[supervisord]
+nodaemon=true
+user=root
+logfile=/var/log/supervisor/supervisord.log
+pidfile=/var/run/supervisord.pid
+
+[program:backend]
+directory=/app/backend
+command=/bin/sh -c "sleep 5 && pnpm db:migrate && node dist/server.mjs"
+autostart=true
+autorestart=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+priority=10
+# DATABASE_URL is set to a placeholder here and replaced via sed in docker-entrypoint.sh
+# All other environment variables (NODE_ENV, ARCHESTRA_*, etc.) are inherited automatically
+environment=DATABASE_URL="postgresql://archestra:archestra_dev_password@localhost:5432/archestra_dev?schema=public",NEXT_PUBLIC_ARCHESTRA_ANALYTICS="enabled"
+
+[program:frontend]
+directory=/app/frontend
+command=/bin/sh -c "sleep 8 && node server.js"
+autostart=true
+autorestart=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+priority=20
+# HOSTNAME="0.0.0.0" is required for Next.js standalone server to bind to all interfaces.
+# Without this, Next.js binds only to the container's IP, breaking kubectl port-forward.
+# See: https://nextjs.org/docs/app/api-reference/config/next-config-js/output#automatically-copying-traced-files
+# NEXT_PUBLIC_* variables are mapped from ARCHESTRA_* ENV variables
+# All other environment variables (NODE_ENV, etc.) are inherited automatically
+environment=HOSTNAME="0.0.0.0",NEXT_PUBLIC_ARCHESTRA_API_BASE_URL="%(ENV_ARCHESTRA_API_BASE_URL)s",NEXT_PUBLIC_ARCHESTRA_ANALYTICS="%(ENV_ARCHESTRA_ANALYTICS)s",NEXT_PUBLIC_ARCHESTRA_SENTRY_FRONTEND_DSN="%(ENV_ARCHESTRA_SENTRY_FRONTEND_DSN)s",NEXT_PUBLIC_ARCHESTRA_SENTRY_ENVIRONMENT="%(ENV_ARCHESTRA_SENTRY_ENVIRONMENT)s",NEXT_PUBLIC_ARCHESTRA_ENTERPRISE_LICENSE_ACTIVATED="%(ENV_ARCHESTRA_ENTERPRISE_LICENSE_ACTIVATED)s",NEXT_PUBLIC_ARCHESTRA_AUTH_DISABLE_BASIC_AUTH="%(ENV_ARCHESTRA_AUTH_DISABLE_BASIC_AUTH)s",NEXT_PUBLIC_ARCHESTRA_AUTH_DISABLE_INVITATIONS="%(ENV_ARCHESTRA_AUTH_DISABLE_INVITATIONS)s",NEXT_PUBLIC_ARCHESTRA_ANALYTICS="enabled"
+
+[program:postgres]
+user=postgres
+command=postgres -D /var/lib/postgresql/data
+autostart=true
+autorestart=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+priority=1
+
+[program:startup-banner]
+command=/bin/sh -c "sleep 12 && /app/docker-banner.sh"
+autostart=true
+autorestart=false
+startsecs=0
+priority=999
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0

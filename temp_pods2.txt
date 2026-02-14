@@ -1,0 +1,8 @@
+﻿NAME                                                              READY   STATUS             RESTARTS         AGE
+mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d-589cb8pqqxm   0/1     CrashLoopBackOff   29 (4m47s ago)   18h
+mcp-config-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-68ccb76656m494z   0/1     Error              33 (5m12s ago)   19h
+mcp-database-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-58d5f6c8qj4nd   0/1     Error              33 (5m17s ago)   19h
+mcp-deployment-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-57f5bclsx8f   0/1     Error              33 (5m13s ago)   19h
+mcp-kubernetes-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-55fb4cpkw8l   0/1     CrashLoopBackOff   33 (5m ago)      19h
+mcp-logs-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-54d8bcf4c7-bzsjf    0/1     CrashLoopBackOff   33 (4m43s ago)   19h
+mcp-metrics-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-64c4f598c9nh6j   1/1     Running            0                25s

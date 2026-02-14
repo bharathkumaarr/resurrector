@@ -1,0 +1,7 @@
+﻿mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d
+mcp-config-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg
+mcp-database-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg
+mcp-deployment-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg
+mcp-kubernetes-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg
+mcp-logs-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg
+mcp-metrics-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg

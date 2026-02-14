@@ -1,0 +1,8 @@
+﻿NAME                                                              READY   STATUS             RESTARTS         AGE   IP            NODE                          NOMINATED NODE   READINESS GATES
+mcp-config-mcp-fdd3275d-3df9-4e73-9a61-143056ddca1d-589cb8pqqxm   0/1     CrashLoopBackOff   28 (2m43s ago)   18h   10.244.0.11   archestra-mcp-control-plane   <none>           <none>
+mcp-config-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-68ccb76656m494z   0/1     CrashLoopBackOff   31 (2m46s ago)   19h   10.244.0.10   archestra-mcp-control-plane   <none>           <none>
+mcp-database-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-58d5f6c8qj4nd   0/1     CrashLoopBackOff   31 (3m ago)      19h   10.244.0.6    archestra-mcp-control-plane   <none>           <none>
+mcp-deployment-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-57f5bclsx8f   0/1     CrashLoopBackOff   31 (2m58s ago)   19h   10.244.0.8    archestra-mcp-control-plane   <none>           <none>
+mcp-kubernetes-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-55fb4cpkw8l   0/1     CrashLoopBackOff   32 (2m55s ago)   19h   10.244.0.5    archestra-mcp-control-plane   <none>           <none>
+mcp-logs-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-54d8bcf4c7-bzsjf    0/1     CrashLoopBackOff   32 (2m27s ago)   19h   10.244.0.7    archestra-mcp-control-plane   <none>           <none>
+mcp-metrics-mcp-ndavfz93cbmocogfksjqxiqupq2qcmhg-67f959788zdgjv   0/1     CrashLoopBackOff   32 (3m4s ago)    19h   10.244.0.2    archestra-mcp-control-plane   <none>           <none>
